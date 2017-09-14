@@ -42,3 +42,8 @@ Start logagent
 ```
 logagent --config logagent-kafka-input.yaml
 ```
+
+## Contributions
+
+Original author: [Filippo Balicchia](https://github.com/fbalicchia) logagent-js [PR#75](https://github.com/sematext/logagent-js/pull/75) [PR#77](https://github.com/sematext/logagent-js/pull/77) [PR#81](https://github.com/sematext/logagent-js/pull/81)
+

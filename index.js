@@ -27,7 +27,6 @@ var consoleLogger = {
 function InputKafka (config, eventEmitter) {
   this.config = config
   this.eventEmitter = eventEmitter
-  console.log(this.config)
 }
 /**
  * Plugin start function, called after constructor

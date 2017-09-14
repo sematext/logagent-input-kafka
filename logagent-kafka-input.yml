@@ -1,0 +1,26 @@
+# Global options
+options:
+  includeOriginalLine: false
+
+input:
+  kafka: 
+    module: logagent-input-kafka
+    kafkaHost: localhost:9092
+    groupId: logagent-consumer-example
+    # use 'topic' key for a singe topic
+    # topic: test
+    topics: 
+      - test
+    autoCommit: true
+    sessionTimeout: 15000
+    sslEnable: true
+    #For init sslOptions please refer to to https://nodejs.org/api/tls.html
+    sslOptions: 
+      - rejectUnauthorized: false
+
+output:
+  stdout: yaml # use 'pretty' for pretty json and 'ldjson' for line delimited json (default)
+  elasticsearch: 
+    module: elasticsearch
+    url: http://localhost:9200
+    index: test

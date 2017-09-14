@@ -1,0 +1,29 @@
+{
+  "name": "logagent-input-kafka",
+  "version": "1.0.0",
+  "description": "Logagent plugin to read messages from Apache Kafka",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megastef/logagent-input-kafka.git"
+  },
+  "keywords": [
+    "Logging",
+    "Apache",
+    "Kafka",
+    "Logagent",
+    "Sematext"
+  ],
+  "author": "Stefan Thies",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/megastef/logagent-input-kafka/issues"
+  },
+  "homepage": "https://github.com/megastef/logagent-input-kafka#readme",
+  "dependencies": {
+    "kafka-node": "^2.2.3"
+  }
+}

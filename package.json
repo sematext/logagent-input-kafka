@@ -1,6 +1,6 @@
 {
   "name": "logagent-input-kafka",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Logagent plugin to read messages from Apache Kafka",
   "main": "index.js",
   "scripts": {

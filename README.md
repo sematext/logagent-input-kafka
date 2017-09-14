@@ -18,7 +18,7 @@ options:
 input:
   kafka: 
     module: logagent-input-kafka
-    kafkaHost: localhost
+    kafkaHost: localhost:9092
     groupId: ExampleTestGroup
     topic: test
     autoCommit: true

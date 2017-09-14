@@ -5,6 +5,7 @@ Install @sematext/logagent npm packge:
 
 ```
 npm i -g @sematext/logagent 
+npm i -g logagent-input-kafka
 ```
  
 ### Configuration

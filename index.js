@@ -48,6 +48,12 @@ InputKafka.prototype.createServer = function () {
   let autoCommit = this.config.autoCommit
   let protocol = this.config.protocol || 'roundrobin'
   let self = this
+  if (!kafkaHost) {
+    throw new Error ("No kafkaHost value defined in configuration")
+  }
+  if (!topic[0]) {
+    throw new Error ("No topic value defined in configuration")
+  }
   consoleLogger.log('Init kafka consumer')
   var consumerOptions = {
     kafkaHost: kafkaHost,

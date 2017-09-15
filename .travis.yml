@@ -35,6 +35,7 @@ script:
   - cd kafka-test
   - export KAFKA_ADVERTISED_HOST_NAME=localhost
   - docker-compose up -d
+  - sleep 10
   - bash -c "logagent --config ../logagent-kafka-input.yml > output.txt" &
   - node producer-ssl.js
   - sleep 2  

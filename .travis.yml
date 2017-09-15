@@ -30,13 +30,4 @@ install:
   - npm i
   
 script: 
-  - docker-compose version 
-  - docker version
-  - cd kafka-test
-  - export KAFKA_ADVERTISED_HOST_NAME=localhost
-  - docker-compose up -d
-  - sleep 10
-  - bash -c "logagent --config ../logagent-kafka-input.yml > output.txt" &
-  - node producer-ssl.js
-  - sleep 2  
-  - grep 'Secure message : 9' output.txt
+  - kafka-test/test.sh

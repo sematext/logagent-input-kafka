@@ -39,4 +39,4 @@ script:
   - bash -c "logagent --config ../logagent-kafka-input.yml > output.txt" &
   - node producer-ssl.js
   - sleep 2  
-  - bash -c "cat output.txt | grep "Secure message : 9"
+  - bash -c 'cat output.txt | grep "Secure message : 9"'

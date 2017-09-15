@@ -8,7 +8,7 @@ var sslOptions = {
   rejectUnauthorized: false
 }
 
-var client = new Client('127.0.0.1', clientId, undefined, undefined, sslOptions)
+var client = new Client('localhost', clientId, undefined, undefined, sslOptions)
 var topic = 'test'
 var producer = new Producer(client, { requireAcks: 1 })
 

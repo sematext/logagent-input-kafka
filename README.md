@@ -1,7 +1,10 @@
 ## Logagent Plugin: Apache Kafka
 
 Input plugin for [@sematext/logagent](http://sematext.com/logagent/). The plugin acts as message consumer for Apache Kafka.
-Install @sematext/logagent npm packge: 
+
+## Installation 
+
+Install [@sematext/logagent](https://www.npmjs.com/package/@sematext/logagent) and [logagent-input-kafka](https://www.npmjs.com/package/logagent-input-kafka) npm package: 
 
 ```
 npm i -g @sematext/logagent 
@@ -31,9 +34,9 @@ input:
 output:
   stdout: yaml # use 'pretty' for pretty json and 'ldjson' for line delimited json (default)
   elasticsearch: 
-  	module: elasticsearch
-  	url: http://localhost:9200
-  	index: test
+    module: elasticsearch
+    url: http://localhost:9200
+    index: test
 
 ```
 

@@ -35,7 +35,7 @@ script:
   - cd kafka-test
   - export KAFKA_ADVERTISED_HOST_NAME=localhost
   - docker-compose up -d
-  - bash -c "logagent --config logagent-kafka-input.yml > output.txt" &
+  - bash -c "logagent --config ../logagent-kafka-input.yml > output.txt" &
   - node producer-ssl.js
   - sleep 2  
   - bash -c "cat output.txt | grep "Secure message : 9"

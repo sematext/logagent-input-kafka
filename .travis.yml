@@ -1,0 +1,41 @@
+language: node_js
+node_js:
+  - "6"
+  - "8"
+
+os:
+  - linux
+
+sudo: required
+services:
+  - docker
+
+env:
+  DOCKER_COMPOSE_VERSION: 1.8.0
+
+before_install:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y install docker-ce
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - sudo apt-get update
+
+install: 
+  - npm i -g @sematext/logagent
+  - npm i -g 
+  - npm i
+  
+script: 
+  - docker-compose version 
+  - docker version
+  - cd kafka-test
+  - export KAFKA_ADVERTISED_HOST_NAME=localhost
+  - docker-compose up -d
+  - bash -c "logagent --config logagent-kafka-input.yml > output.txt" &
+  - node producer-ssl.js
+  - sleep 2  
+  - bash -c "cat output.txt | grep "Secure message : 9"

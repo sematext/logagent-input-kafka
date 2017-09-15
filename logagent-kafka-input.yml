@@ -14,13 +14,13 @@ input:
     autoCommit: true
     sessionTimeout: 15000
     sslEnable: true
-    #For init sslOptions please refer to to https://nodejs.org/api/tls.html
+    # For init sslOptions please refer to to https://nodejs.org/api/tls.html
     sslOptions: 
       - rejectUnauthorized: false
 
 output:
-  stdout: yaml # use 'pretty' for pretty json and 'ldjson' for line delimited json (default)
-  elasticsearch: 
-    module: elasticsearch
-    url: http://localhost:9200
-    index: test
+  stdout: ldjson # use 'pretty' for pretty json or 'yaml' 
+  # elasticsearch: 
+  #   module: elasticsearch
+  #  url: http://localhost:9200
+  #  index: test

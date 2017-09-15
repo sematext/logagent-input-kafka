@@ -14,7 +14,7 @@ var producer = new Producer(client, { requireAcks: 1 })
 
 producer.on('ready', function () {
   for (let i = 0; i < 10; i++) {
-    var message = 'Secure message : ' + i
+    var message = JSON.stringify({msg: 'Secure message : ' + i, msgNo: i })
     console.log('send message ' + message)
     producer.send([
       {

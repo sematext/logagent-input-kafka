@@ -46,6 +46,7 @@ InputKafka.prototype.createServer = function () {
   let topic = this.config.topics || [ this.config.topic ]
   let sessionTimeout = this.config.sessionTimeout
   let autoCommit = this.config.autoCommit
+  let autoCommitIntervalMs = this.config.autoCommitIntervalMs
   let protocol = this.config.protocol || 'roundrobin'
   let self = this
   if (!kafkaHost) {
@@ -59,6 +60,7 @@ InputKafka.prototype.createServer = function () {
     kafkaHost: kafkaHost,
     groupId: groupId,
     autoCommit: autoCommit,
+    autoCommitIntervalMs: autoCommitIntervalMs,
     sessionTimeout: sessionTimeout,
     // Strategy to Assign partition possible value can be "range" or "roundrobin"
     protocol: [protocol], // default: ['roundrobin'],

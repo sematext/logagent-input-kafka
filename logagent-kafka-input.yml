@@ -12,6 +12,7 @@ input:
     topics: 
       - test
     autoCommit: true
+    autoCommitIntervalMs: 5000 
     sessionTimeout: 15000
     sslEnable: true
     # For init sslOptions please refer to to https://nodejs.org/api/tls.html

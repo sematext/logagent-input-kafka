@@ -5,7 +5,8 @@ options:
 input:
   kafka: 
     module: logagent-input-kafka
-    kafkaHost: localhost:9092
+    host: localhost
+    port: 9092
     groupId: logagent-consumer-example
     # use 'topic' key for a singe topic
     # topic: test

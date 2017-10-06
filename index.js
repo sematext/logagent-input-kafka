@@ -44,7 +44,7 @@ InputKafka.prototype.createServer = function () {
   
   let host = this.config.host || 'localhost'
   let port = this.config.port || '9092'
-  let kafkaHost = host.concat(':').concat(port);
+  let kafkaHost = host.concat(':').concat(port)
   let groupId = this.config.groupId
   let topic = this.config.topics || [ this.config.topic ]
   let sessionTimeout = this.config.sessionTimeout

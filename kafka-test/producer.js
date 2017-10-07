@@ -3,9 +3,9 @@
 var kafka = require('kafka-node')
 var uuid = require('uuid')
 var Producer = kafka.Producer
-var Client = kafka.Client
+var Client = kafka.KafkaClient
 var clientId = 'logagent-producer-example' + uuid.v4()
-var client = new Client('localhost', clientId, undefined, undefined, undefined)
+var client = new Client('localhost:9092', clientId, undefined, undefined, undefined)
 var topic = 'test'
 var producer = new Producer(client, { requireAcks: 1 })
 

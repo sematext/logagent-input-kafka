@@ -2,13 +2,13 @@
 var kafka = require('kafka-node')
 var uuid = require('uuid')
 var Producer = kafka.Producer
-var Client = kafka.Client
+var Client = kafka.KafkaClient
 var clientId = 'logagent-producer-example' + uuid.v4()
 var sslOptions = {
   rejectUnauthorized: false
 }
 
-var client = new Client('localhost', clientId, undefined, undefined, sslOptions)
+var client = new Client('localhost:9093', clientId, undefined, undefined, sslOptions)
 var topic = 'test'
 var producer = new Producer(client, { requireAcks: 1 })
 

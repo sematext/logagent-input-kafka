@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/megastef/logagent-input-kafka#readme",
   "dependencies": {
-    "kafka-node": "^2.2.3"
+    "kafka-node": "^2.3.1"
   }
 }
